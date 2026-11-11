@@ -32,3 +32,193 @@ button:hover { background: #06656b; }
     padding: 1rem;
   }
 }
+
+
+/* ===== LISTA DE PARTICIPANTES ===== */
+
+#lista-inscripciones {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.item-inscripcion {
+  background: #edf8f5;
+  border: 1px solid #d4e9e5;
+  border-radius: 12px;
+  padding: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.datos-inscripcion {
+  flex: 1;
+  min-width: 200px;
+}
+
+.datos-inscripcion strong {
+  color: #183153;
+  font-size: 1.05rem;
+}
+
+.datos-inscripcion p {
+  margin: 0.5rem 0;
+  overflow-wrap: anywhere;
+}
+
+/* ===== BOTONES DE ACCIÓN ===== */
+
+.acciones-inscripcion {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.acciones-inscripcion button {
+  width: auto;
+  padding: 0.7rem 1rem;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-editar {
+  background: #087e83;
+}
+
+.btn-eliminar {
+  background: #bd4545;
+}
+
+.btn-editar:hover {
+  background: #06666a;
+}
+
+.btn-eliminar:hover {
+  background: #9b3030;
+}
+
+#btn-cancelar {
+  background: #64748b;
+  margin-top: 0.75rem;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* ===== REPORTES ===== */
+
+.resumen-reportes {
+  background: #e5f5f2;
+  border: 1px solid #b8e3db;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.resumen-reportes h3 {
+  margin: 0;
+  color: #183153;
+}
+
+#total-inscripciones {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #087e83;
+  margin: 0.5rem 0 0;
+}
+
+.reportes-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.reporte {
+  background: #ffffff;
+  border: 1px solid #dce5eb;
+  border-radius: 12px;
+  padding: 1.25rem;
+  min-width: 0;
+}
+
+.reporte h3 {
+  margin-top: 0;
+  font-size: 1rem;
+  color: #183153;
+}
+
+/* ===== BARRAS DE ESTADÍSTICAS ===== */
+
+.fila-reporte {
+  margin-bottom: 1rem;
+}
+
+.encabezado-reporte {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.encabezado-reporte span {
+  overflow-wrap: anywhere;
+}
+
+.encabezado-reporte strong {
+  color: #087e83;
+}
+
+.barra-fondo {
+  width: 100%;
+  height: 12px;
+  background: #e4edf0;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.barra-progreso {
+  height: 100%;
+  background: #087e83;
+  border-radius: 20px;
+  transition: width 0.3s ease;
+}
+
+/* ===== DISEÑO RESPONSIVE ===== */
+
+@media (max-width: 640px) {
+  .reportes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .item-inscripcion {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .acciones-inscripcion {
+    width: 100%;
+  }
+
+  .acciones-inscripcion button {
+    flex: 1;
+  }
+
+  .resumen-reportes {
+    padding: 1rem;
+  }
+
+  #total-inscripciones {
+    font-size: 2.3rem;
+  }
+}

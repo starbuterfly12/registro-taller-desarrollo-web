@@ -9,50 +9,158 @@
 </head>
 <body>
   <main class="contenedor">
+
     <header class="encabezado">
       <p class="etiqueta">Universidad · Actividad de clase</p>
       <h1>Registro al taller</h1>
       <p>Completa tus datos para reservar un espacio.</p>
     </header>
 
+    <!-- FORMULARIO DE INSCRIPCIÓN -->
     <section class="panel" aria-labelledby="titulo-formulario">
       <h2 id="titulo-formulario">Datos de inscripción</h2>
+
       <form id="formulario-registro">
+
         <label for="nombre">Nombre completo</label>
-        <input id="nombre" name="nombre" type="text" required minlength="2" autocomplete="name">
+        <input
+          id="nombre"
+          name="nombre"
+          type="text"
+          required
+          minlength="2"
+          autocomplete="name"
+        >
 
         <label for="correo">Correo electrónico</label>
-        <input id="correo" name="correo" type="email" required autocomplete="email">
+        <input
+          id="correo"
+          name="correo"
+          type="email"
+          required
+          autocomplete="email"
+        >
 
         <label for="taller">Taller</label>
         <select id="taller" name="taller" required>
           <option value="">Selecciona un taller</option>
           <option value="HTML y CSS">HTML y CSS</option>
           <option value="JavaScript">JavaScript</option>
-          <option value="Node.js y Express">Node.js y Express</option>
+          <option value="Node.js y Express">
+            Node.js y Express
+          </option>
         </select>
 
         <label for="telefono">Teléfono</label>
-        <input id="telefono" name="telefono" type="tel" required autocomplete="tel">
+        <input
+          id="telefono"
+          name="telefono"
+          type="tel"
+          required
+          autocomplete="tel"
+        >
 
-        <label for="horario">Horario</label>
-        <select id="horario" name="horario" required>
-          <option value="">Selecciona un horario</option>
-          <option value="manana">Mañana</option>
-          <option value="tarde">Tarde</option>
+
+      <label for="horario">Horario</label>
+      <select id="horario" name="horario" required>
+         <option value="">Selecciona un horario</option>
+         <option value="Mañana (7:00 a. m. - 11:00 a. m.)">
+            Mañana (7:00 a. m. - 11:00 a. m.)
+         </option>
+         <option value="Tarde (1:00 p. m. - 5:00 p. m.)">
+            Tarde (1:00 p. m. - 5:00 p. m.)
+         </option>
+         <option value="Noche (6:00 p. m. - 9:00 p. m.)">
+            Noche (6:00 p. m. - 9:00 p. m.)
+        </option>
+        <option value="Mixto (7:00 a. m. - 9:00 p. m.)">
+           Mixto (7:00 a. m. - 9:00 p. m.)
+         </option>
+          </select>
+
+        <label for="modalidad">Modalidad</label>
+        <select id="modalidad" name="modalidad" required>
+          <option value="">Selecciona una modalidad</option>
+          <option value="Presencial">Presencial</option>
+          <option value="Virtual">Virtual</option>
         </select>
 
-        <button type="submit">Registrar inscripción</button>
+        <label for="nivel_experiencia">
+          Nivel de experiencia
+        </label>
+        <select
+          id="nivel_experiencia"
+          name="nivel_experiencia"
+          required
+        >
+          <option value="">Selecciona tu nivel</option>
+          <option value="Principiante">Principiante</option>
+          <option value="Intermedio">Intermedio</option>
+          <option value="Avanzado">Avanzado</option>
+        </select>
+
+        <button type="submit" id="btn-guardar">
+          Registrar inscripción
+        </button>
+
+        <button type="button" id="btn-cancelar" hidden>
+          Cancelar edición
+        </button>
+
       </form>
-      <p id="mensaje" class="mensaje" role="status" aria-live="polite"></p>
+
+      <p
+        id="mensaje"
+        class="mensaje"
+        role="status"
+        aria-live="polite"
+      ></p>
     </section>
 
     <section class="panel" aria-labelledby="titulo-lista">
       <h2 id="titulo-lista">Participantes inscritos</h2>
+
       <ul id="lista-inscripciones" aria-live="polite">
         <li class="vacio">Aún no hay inscripciones.</li>
       </ul>
     </section>
+
+    <!-- REPORTES -->
+    <section class="panel" aria-labelledby="titulo-reportes">
+      <h2 id="titulo-reportes">Reportes de inscripciones</h2>
+
+
+      <div class="resumen-reportes">
+        <h3>Total de participantes</h3>
+        <p id="total-inscripciones">0</p>
+      </div>
+
+      <div class="reportes-grid">
+
+        <div class="reporte">
+          <h3>Inscripciones por taller</h3>
+          <div id="reporte-taller">
+            <p class="vacio">Sin datos disponibles.</p>
+          </div>
+        </div>
+
+        <div class="reporte">
+          <h3>Inscripciones por horario</h3>
+          <div id="reporte-horario">
+            <p class="vacio">Sin datos disponibles.</p>
+          </div>
+        </div>
+
+        <div class="reporte">
+          <h3>Inscripciones por modalidad</h3>
+          <div id="reporte-modalidad">
+            <p class="vacio">Sin datos disponibles.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
   </main>
 </body>
 </html>
